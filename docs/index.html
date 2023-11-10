@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>RIFT</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
+          <div class="container d-flex justify-content-center px-5">
+            <div class="navbar-brand text-uppercase"><h5 class="mb-0 fw-bold">Routing In Fat Trees (RIFT)</h5></div>
+        </nav>
+        <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
+          <div class="container d-flex justify-content-center px-5">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          <div class="container d-flex justify-content-between px-5">            
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+              <div id="mySidenav" class="sidenav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link active text-uppercase fw-light" aria-current="page" href="#HOME">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active text-uppercase fw-light" aria-current="page" href="#Membros do Grupo">Membros do Grupo</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active text-uppercase fw-light" aria-current="page" href="#Introdução">Introdução</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active text-uppercase fw-light" aria-current="page" href="#Fat Trees">Fat Trees</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active text-uppercase fw-light" aria-current="page" href="#RIFT">RIFT</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active text-uppercase fw-light" aria-current="page" href="#BGP x RIFT">BGP x RIFT</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active text-uppercase fw-light" aria-current="page" href="#Implementação">Implementação</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active text-uppercase fw-light" aria-current="page" href="#Conclusão">Conclusão</a>
+                    </li>
+                </ul>
+              </div>
+              <span onclock="openNav()"></span>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <div class="bg-primary">
+        <div class="container">
+          <div class="row">
+            <div class="col d-flex justify-content-center pt-2">
+              <img class="top-image" src="img/poli.png" alt="Logo img">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+                <div class="line"></div>
+                <i class="fa-solid fa-star text-white"></i>
+                <div class="line"></div>
+            </div>
+          </div>
+          <div class="row d-flex">
+            <div class="text-white col d-flex justify-content-center">
+              <h6 class="write-top-part">Redes de Computadores II - prof. Luís Henrique</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row" id="Membros do Grupo">
+          <div class="col d-flex justify-content-center pt-5">
+            <h2>Membros do Grupo</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-center">
+            <div class="line line-blk"></div>
+            <i class="fa-solid fa-star"></i>
+            <div class="line line-blk"></div>
+          </div>
+        </div>
+        <div class="row d-flex">
+          <div class="col d-flex justify_content-center">
+            <ul>
+              <li>Bruno Carvalho</li>
+              <li>Lucas Meyer</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row" id="Introdução">
+          <div class="col d-flex justify-content-center pt-5">
+            <h2>Introdução</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-center">
+            <div class="line line-blk"></div>
+            <i class="fa-solid fa-star"></i>
+            <div class="line line-blk"></div>
+          </div>
+        </div>
+        <div class="row d-flex">
+          <div class= col d-flex justify_content-center">
+            <p>Com o passar dos anos, houve um crescimento da demanda por sistemas mais
+              centralizados pela internet, exigindo a criação e expansão de data centers. Com a
+              necessidade de escalabilidade, o protocolo BGP(Border Gateway Protocol) foi adaptado
+              para ser o protocolo de roteamento dentro destas estruturas.
+              Contudo, foram encontradas várias questões e desafios ao longo do tempo quanto
+              ao uso do BGP, devido ao fato de ser um protocolo mais geral desenvolvido para um
+              ambiente descentralizado. Mesmo sendo possível tratar muitas dessas questões, um
+              protocolo de roteamento dedicado diretamente para trabalhar em um ambiente estruturado
+              terá claras vantagens sobre o BGP.
+              Será abordado neste trabalho um deste tipo de protocolo: o protocolo RIFT (Routing
+              In Fat Trees). Mostraremos seu funcionamento e como se aproveita da estrutura de um data
+              centers para obter melhor performance, se comparado com o seu antecessor.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row" id="Fat Trees">
+          <div class="col d-flex justify-content-center pt-5">
+            <h2>O que são Fat Trees</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-center">
+            <div class="line line-blk"></div>
+            <i class="fa-solid fa-star"></i>
+            <div class="line line-blk"></div>
+          </div>
+        </div>
+        <div class="row d-flex">
+          <div class="col d-flex justify_content-center">
+            <p>O conceito Fat-Tree foi proposto por Charles E. Leiserson, um pesquisador do MIT,
+              em 1985. Em seu artigo ele apresenta as fat-trees como “uma rede de roteamento para
+              computação paralela”[3], onde fat-trees são “uma família de estratégias de interconexão de
+              uso geral que utilizam efetivamente qualquer quantidade de recursos de hardware
+              dedicados à comunicação”[3].</p>
+          </div>
+          <div class="col d-flex justify-content-center pt-2">
+            <img src="img/fat_tree.png" alt="Software Project Canvas.png" width="" hight ="">
+          </div>
+          <div>
+            <p>
+              Uma fat-tree é uma rede de roteamento baseada em uma árvore binária completa.
+              Um conjunto P de n processadores está localizado nas folhas da fat-tree. Cada aresta da
+              árvore subjacente corresponde a dois canais da fat-tree: pai para filho e filho para pai. Cada
+              canal consiste em um feixe de fios, e o número de fios em um canal c é chamado de
+              capacidade, denotado de cap(c). As capacidades dos canais na rede de roteamento são
+              determinadas pela quantidade de hardware que estarão conectados. O canal que sai da raiz
+              da árvore corresponde a uma interface com a rede externa. Cada nó interno da fat-tree
+              contém circuitos que alternam mensagens entre canais de entrada e canais de saída.</p>
+            <p>
+              Diferentemente das árvores comumente utilizadas na computação, a fat-tree possui
+              maior semelhança com as árvores reais, pois é mais densa conforme se distancia das
+              folhas e se aproxima da raiz. Esse aumento do número de enlaces conforme vai se
+              distanciando das folhas confere a fat-tree vantagens no roteamento comparado com uma
+              estrutura de árvore binária convencional, solucionando dois problemas: sobrecarga dos
+              enlaces de nível mais alto da árvore, impacto de falhas em nós de níveis altos.</p>
+            <p>
+              No seu artigo[3], Charles E. Leiserson prova que para uma determinada quantidade
+              física de hardware, nenhuma rede é melhor que a fat-tree e tal afirmação se sustenta até os
+              dias de hoje.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row" id="RIFT">
+          <div class="col d-flex justify-content-center pt-5">
+            <h2>O protocolo RIFT</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-center">
+            <div class="line line-blk"></div>
+            <i class="fa-solid fa-star"></i>
+            <div class="line line-blk"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-center pt-2">
+            <p>
+              O RIFT foi projetado para enfrentar os desafios de roteamento em redes fat tree, que
+              incluem a necessidade de uso eficiente da largura de banda da rede, baixa latência e alta
+              disponibilidade da rede. O RIFT consegue isso usando uma combinação de algoritmos de
+              roteamento centralizados e distribuídos.
+            </p>
+          </div>
+          <div>
+            <p>
+              No RIFT, os core switches na camada superior da árvore (raíz) são responsáveis por
+              computar e distribuir informações de roteamento para os outros switches da rede. Cada
+              switch na rede mantém uma tabela de roteamento que especifica o melhor caminho para
+              cada destino.
+            </p>
+            <p>
+              O RIFT permite que vários caminhos sejam usados para o tráfego entre quaisquer
+              dois switches na rede através de uma técnica chamada Equal-Cost Multi-Path (ECMP).
+              Dessa forma, o tráfego é distribuído na rede e proporciona melhor desempenho.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row" id="BGP x RIFT">
+          <div class="col d-flex justify-content-center pt-5">
+            <h2>Comparação BGP x RIFT</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-center">
+            <div class="line line-blk"></div>
+            <i class="fa-solid fa-star"></i>
+            <div class="line line-blk"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-center pt-2">
+            <p>
+              RIFT e BGP são protocolos de roteamento usados em redes de data centers, mas
+              diferem em seus objetivos e capacidades de design.
+            </p>
+          </div> 
+          <div>
+            <p>
+              BGP é um protocolo de roteamento amplamente utilizado em redes de provedores
+              de serviços de grande escala e redes corporativas. Ele é projetado para roteamento entre
+              diferentes sistemas autônomos (AS) e troca de informações de roteamento entre diferentes
+              redes.
+            </p>
+            <p>
+              Por outro lado, o RIFT foi projetado especificamente para uso em redes de data
+              centers que usam uma topologia de fat-tree. O RIFT é otimizado para comunicação de alta
+              largura de banda e baixa latência na rede do data center e pode fornecer roteamento
+              eficiente e escalável em grandes data centers.
+            </p>
+            <p>
+              Embora o RIFT e o BGP sejam protocolos de roteamento usados em redes de data
+              centers, eles têm objetivos e capacidades diferentes. O RIFT é otimizado para comunicação
+              de alta largura de banda e baixa latência em redes de data centers com topologia fat-tree,
+              enquanto o BGP é mais flexível e adequado para cenários de roteamento mais genéricos.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row"  id="Implementação">
+          <div class="col d-flex justify-content-center pt-5">
+            <h2>Implementação do RIFT</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-center">
+            <div class="line line-blk"></div>
+            <i class="fa-solid fa-star"></i>
+            <div class="line line-blk"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-center pt-2">
+            <p>
+              A proposta inicial oficial de implementação do RIFT foi estabelecida em janeiro de
+              2018 como um working group da IEFT. Por ser recente, muitos dos projetos de teste e
+              implementações estão ainda amadurecendo. Mesmo assim, falaremos sobre alguns dos
+              mais interessantes:
+            </p>
+          </div> 
+          <div>
+            <p>
+              A Juniper, uma empresa multinacional especializada em desenvolvimento e
+              marketing de produtos de networking, desenvolveu uma 
+              <a href="https://www.juniper.net/documentation/us/en/software/junos/rift/topics/topic-map/rift.html"
+              target="_blank">implementação proprietária</a>
+              já disponível para uso.
+            </p>
+            <p>
+              Para implementações Open Source do protocolo, foram indepentemente
+              desenvolvidos nas linguagens
+              <a href="https://github.com/brunorijsman/rift-python" target="_blank">Python</a>
+              e
+              <a href="https://docs.rs/rift/latest/rift/">Rust</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </main>
+    <footer>
+      <div class="footer-first-section">
+        <div class="container">
+          <div class="row d-flex flex-column flex-sm-row align-content-center justify-content-center">
+            <div class="col-10 col-sm-4 text-center pb-5 pb-sm-0">
+              <h6>Referências</h6>
+              <a href="https://clusterdesign.org/fat-trees/"
+              style="color: rgb(160, 155, 155);"
+              target="_blank">[1] https://clusterdesign.org/fat-trees/</a>
+              <div>
+                <a href="https://orhanergun.net/rift-routing-in-fat-trees"
+                style="color: rgb(160, 155, 155);"
+                target="_blank">[2] https://orhanergun.net/rift-routing-in-fat-trees</a>
+              </div>
+              <div>
+                <a href="https://ieeexplore.ieee.org/document/6312192"
+                style="color: rgb(160, 155, 155);"
+                target="_blank">[3] https://ieeexplore.ieee.org/document/6312192</a>
+              </div>
+              <!-- <div> -->
+                <!-- <a href="https://github.com/lmeyer-del/EEL873" -->
+                <!-- style="color: rgb(160, 155, 155);">Repositório no GitHub</a></div> -->
+              <!-- </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+:root {
+    --bs-primary-rgb: 41, 187, 156;
+    --bs-secondary-rgb: 44, 62, 79;
+    --bs-se
+}
+
+.top-image {
+    width: 200px;
+    padding: 20px 0;
+}
+
+.line {
+    height: 2px;
+    width: 100px;
+    background-color: white;
+    align-self: center;
+    margin: 0 15px;
+}
+
+
+.write-top-part {
+    padding: 20px 0;
+}
+
+.line-blk {
+    background-color: black;
+}
+
+.img-center-content {
+    width: 100%;
+    border-radius: .3rem;
+}
+
+.color-modified-btn {
+    background-color: #19BC9D;
+    border: 0;
+}
+
+.modified-padding-list > div {
+    padding-left: 0;
+}
+
+.text-color {
+    color:  #19BC9D;
+}
+
+.footer-first-section {
+    background-color: #3A546D;
+    color: white;
+    padding-top: 2.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.social-icon-section i {
+    padding: .8rem .8rem;
+    border-radius: 50%;
+    border: 1px solid white;
+    width: 40px;
+    height: 40px;
+    line-height: 15px;
+    text-align: center;
+}
+
+.footer-second-section {
+    background-color: #2C3F51;
+    color: white;
+}
+
+.footer-second-section span {
+    font-size: .6rem;
+}
+
+.form-floating > .custom-space-message-input {
+    padding-bottom: 10rem;
+}
+
+
+.img-center-content:hover{
+    transform: rotateY(10deg);
+    transform: rotateX(20deg);
+    transition: transform .30s ease-in-out;
+}
+
+.animated-icon-fb:hover {
+    background-color: #2d52a1;
+    transition: background-color .20s ease-in-out;
+    transform-origin: center;
+}
+.animated-icon-gp:hover {
+    background-color: #db4a39;
+    transition-property: background-color; 
+    transition-duration: .20s; 
+    transition-timing-function:  ease-in-out;
+    transform-origin: center;
+}
+.animated-icon-tw:hover {
+    background-color: #1DA1F2;
+    transition: background-color .20s ease-in-out;
+}
+.animated-icon-ld:hover {
+    background-color: #0e76a8;
+    transition: background-color .20s ease-in-out;
+}
